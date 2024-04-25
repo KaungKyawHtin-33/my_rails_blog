@@ -2,8 +2,14 @@
 
 <% @blog_posts.each do |blog| %>
     <div class="card w-75 mb-4">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between">
             <h3><%= blog.title %></h3>
+            <% if blog.draft? %>
+                <h3><span class="badge text-bg-danger">Draft blog</span></h3>
+            <% end %>
+            <% if blog.scheduled? %>
+                <h3><span class="badge text-bg-secondary">Scheduled blog</span></h3>
+            <% end %>
         </div>
         <div class="card-body">
             <p><%= blog.body.truncate(150, omission: "...") %></p>

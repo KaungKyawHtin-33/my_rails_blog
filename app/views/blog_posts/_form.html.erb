@@ -15,6 +15,15 @@
         <%= form.text_area :body, class: "form-control w-50" %>
     </div>
 
+    <% if user_signed_in? %>
+        <div class="mb-3">
+            <%= form.label :published_at, class: "form-label" %>
+            <div class="d-flex">
+                <%= form.datetime_select :published_at, { ampm: false, include_blank: true }, { class: "form-control me-2" } %>
+            </div>
+        </div>
+    <% end %>
+
     <div class="mb-3">
         <%= form.submit "Create", class: "btn btn-primary px-4" %>
     </div>
