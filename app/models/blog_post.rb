@@ -1,4 +1,5 @@
 class BlogPost < ApplicationRecord
+  has_one_attached :image
   has_rich_text :content
 
   validates :title, presence: true, length: { maximum: 50 }

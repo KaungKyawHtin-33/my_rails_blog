@@ -67,3 +67,7 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+gem "pagy", "~> 8.3"
+
+gem "mini_magick"
