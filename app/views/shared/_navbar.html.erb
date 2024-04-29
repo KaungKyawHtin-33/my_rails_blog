@@ -12,6 +12,7 @@
       </ul>
       <div class="d-flex align-items-center">
         <% if user_signed_in? %>
+          <span class="me-3 fw-bold"><%= @current_user.email %></span>
           <%= link_to "Add new blog", new_blog_post_path, class: "btn btn-sm btn-outline-secondary" %>
           <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-outline-danger mx-2" %>
         <% end %>
